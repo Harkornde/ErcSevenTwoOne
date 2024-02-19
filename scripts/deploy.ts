@@ -1,6 +1,9 @@
 import { ethers } from "hardhat";
 
 async function main() {
+  const jubril = await ethers.deployContract("Jubril");
+  await jubril.waitForDeployment();
+
   const saveErc20 = await ethers.deployContract("SaveERC20");
 
   await saveErc20.waitForDeployment();
